@@ -1,0 +1,45 @@
+<section class="card">
+  <h1>Encurte sua URL</h1>
+  <p class="subtitle">Cole um link abaixo e, se quiser, defina um apelido personalizado.</p>
+
+  <form [formGroup]="form" (ngSubmit)="submeter()" class="form">
+    <div class="field">
+      <label for="urlOriginal">URL original</label>
+      <input
+        id="urlOriginal"
+        type="text"
+        formControlName="urlOriginal"
+        placeholder="https://exemplo.com/uma-pagina-com-link-bem-longo"
+      />
+    </div>
+
+    <div class="field">
+      <label for="alias">Apelido (opcional)</label>
+      <input
+        id="alias"
+        type="text"
+        formControlName="alias"
+        placeholder="meu-link-legal"
+      />
+    </div>
+
+    <button type="submit">
+        Encurtar URL
+    </button>
+  </form>
+
+  @if (erro()) {
+    <div class="alert alert-error">{{ erro() }}</div>
+  }
+
+    @if (ultimoResultado(); as resultado) {
+    <div class="resultado">
+      <span class="resultado-label">Sua URL encurtada:</span>
+      <div class="resultado-link">
+        <a [href]="resultado" target="_blank" rel="noopener">{{ resultado }}</a>
+      </div>
+    </div>
+  }
+
+</section>
+
