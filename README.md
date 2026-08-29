@@ -3,17 +3,15 @@
 ## Como rodar o projeto.
 
 ### Manualmente:
-- Comando para executar o backend:
+- Comando para executar o backend: Executar dentro da pasta encurtador-url
 ```
-    cd encurtador-url
     mvn clean package
     cp target/encurtador-url.war $WILDFLY_HOME/standalone/deployments/
     $WILDFLY_HOME/bin/standalone.sh
 ```
   
-- Comando para executar o frontend:
+- Comando para executar o frontend: Executar dentro da pasta encurtador-url-frontend
 ```
-    cd encurtador-url-frontend
     ng serve
   ```
 Abra no browser: http://localhost:4200
@@ -26,9 +24,8 @@ Abra no browser: http://localhost:4200
         docker run -d -p 8080:8080 encurtador-url
 ```
 
-- Comando para executar o frontend:
+- Comando para executar o frontend: Executar dentro da pasta encurtador-url-frontend
 ```
-    cd encurtador-url-frontend
     ng serve
 ```
 Abra no browser: http://localhost:4200
