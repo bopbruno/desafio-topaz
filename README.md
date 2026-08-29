@@ -12,6 +12,7 @@
   
 - Comando para executar o frontend: Executar dentro da pasta encurtador-url-frontend
 ```
+    npm install
     ng serve
   ```
 Abra no browser: http://localhost:4200
@@ -26,6 +27,7 @@ Abra no browser: http://localhost:4200
 
 - Comando para executar o frontend: Executar dentro da pasta encurtador-url-frontend
 ```
+    npm install
     ng serve
 ```
 Abra no browser: http://localhost:4200
