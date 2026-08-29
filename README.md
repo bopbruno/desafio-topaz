@@ -19,9 +19,9 @@ Abra no browser: http://localhost:4200
 
 
 ### Com Docker:
-- Comando para executar o backend:
+- Comando para executar o backend: Executar dentro da pasta encurtador-url
 ```
-        docker build -t encurtador-url ./encurtador-url
+        docker build -t encurtador-url .
         docker run -d -p 8080:8080 encurtador-url
 ```
 
