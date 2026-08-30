@@ -3,10 +3,11 @@
 ## Como rodar o projeto.
 
 ### Manualmente:
+- O wildfly precisa estar configurado para rodar na porta 8080
 - Comando para executar o backend: Executar dentro da pasta encurtador-url
 ```
     mvn clean package
-    cp target/encurtador-url.war $WILDFLY_HOME/standalone/deployments/
+    \cp target/encurtador-url.war $WILDFLY_HOME/standalone/deployments/encurtador-url.war
     $WILDFLY_HOME/bin/standalone.sh
 ```
   
