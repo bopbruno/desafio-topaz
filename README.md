@@ -18,17 +18,9 @@
 Abra no browser: http://localhost:4200
 
 
-### Com Docker:
-- Comando para executar o backend: Executar dentro da pasta encurtador-url
+### Com Docker: Executar dentro da pasta desafio-topaz
 ```
-        docker build -t encurtador-url .
-        docker run -d -p 8080:8080 encurtador-url
-```
-
-- Comando para executar o frontend: Executar dentro da pasta encurtador-url-frontend
-```
-    npm install
-    ng serve
+    docker compose up --build
 ```
 Abra no browser: http://localhost:4200
 
