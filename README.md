@@ -3,10 +3,11 @@
 ## Como rodar o projeto.
 
 ### Manualmente:
+- O wildfly precisa estar configurado para rodar na porta 8080
 - Comando para executar o backend: Executar dentro da pasta encurtador-url
 ```
     mvn clean package
-    cp target/encurtador-url.war $WILDFLY_HOME/standalone/deployments/
+    \cp target/encurtador-url.war $WILDFLY_HOME/standalone/deployments/encurtador-url.war
     $WILDFLY_HOME/bin/standalone.sh
 ```
   
@@ -18,17 +19,9 @@
 Abra no browser: http://localhost:4200
 
 
-### Com Docker:
-- Comando para executar o backend: Executar dentro da pasta encurtador-url
+### Com Docker: Executar dentro da pasta desafio-topaz
 ```
-        docker build -t encurtador-url .
-        docker run -d -p 8080:8080 encurtador-url
-```
-
-- Comando para executar o frontend: Executar dentro da pasta encurtador-url-frontend
-```
-    npm install
-    ng serve
+    docker compose up --build
 ```
 Abra no browser: http://localhost:4200
 
