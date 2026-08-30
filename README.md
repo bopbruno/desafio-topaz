@@ -40,5 +40,6 @@ Abra no browser: http://localhost:4200
  4. Frontend em angular separando a interface do usuário e a lógica do servidor, economizando trafego de rede e processamento do servidor.
 
 ## O que faria diferente com mais tempo:
-- Eu adicionaria teste integrado com wiremock e teste de performance utilizando jmeter
-
+- adicionaria teste de componente usando REST Assured e Testcontainers
+- adicionaria teste de performance utilizando jmeter
+- Criaria uma esteira cd/cd
