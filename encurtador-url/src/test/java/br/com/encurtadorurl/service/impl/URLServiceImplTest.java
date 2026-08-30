@@ -45,7 +45,7 @@ public class URLServiceImplTest {
 
         URLEncurtadaResponse response = urlService.encurtarURL(request);
 
-        assertEquals("42", response.getUrlEncurtada());
+        assertEquals("http://localhost:8080/encurtador-url/api/url/42", response.getUrlEncurtada());
         assertEquals(request.getUrlOriginal(), response.getUrlOriginal());
 
     }
@@ -58,7 +58,7 @@ public class URLServiceImplTest {
 
         URLEncurtadaResponse response = urlService.encurtarURL(request);
 
-        assertEquals("meu-link", response.getUrlEncurtada());
+        assertEquals("http://localhost:8080/encurtador-url/api/url/meu-link", response.getUrlEncurtada());
         assertEquals(request.getUrlOriginal(), response.getUrlOriginal());
 
         verify(urlRepository).save(any(URL.class));
