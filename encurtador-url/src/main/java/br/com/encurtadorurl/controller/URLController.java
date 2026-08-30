@@ -35,7 +35,7 @@ public class URLController {
 
     	URLEncurtadaResponse encurtadaResponse = urlService.encurtarURL(urlEncurtadaRequest);
 
-    	String urlEncurtadaAbsoluta = this.constroiURLEncurtadaAbsoluta(encurtadaResponse.getUrlEncurtada());
+    	String urlEncurtadaAbsoluta = encurtadaResponse.getUrlEncurtada();
     	
     	URLEncurtadaResponse urlEncurtadaAbsolutaResponse = new URLEncurtadaResponse(urlEncurtadaAbsoluta, urlEncurtadaRequest.getUrlOriginal());
 
@@ -49,25 +49,6 @@ public class URLController {
         return Response.status(Response.Status.FOUND)
                 .location(URI.create(originalUrl.getUrlOriginal()))
                 .build();
-    }
-
-    private String constroiURLEncurtadaAbsoluta(String urlEncurtada) {
-        StringBuilder url = new StringBuilder();
-        url.append(httpServletRequest.getScheme())
-                .append("://")
-                .append(httpServletRequest.getServerName());
-
-        boolean isDefaultPort = (httpServletRequest.getScheme().equals("http") && httpServletRequest.getServerPort() == 80)
-                || (httpServletRequest.getScheme().equals("https") && httpServletRequest.getServerPort() == 443);
-        if (!isDefaultPort) {
-            url.append(":").append(httpServletRequest.getServerPort());
-        }
-
-        url.append(httpServletRequest.getContextPath())
-                .append("/api/url/")
-                .append(urlEncurtada);
-
-        return url.toString();
     }
 
 }

@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  backend:
+    environment:
+      - APP_BASE_URL=http://localhost:8080/encurtador-url/api/url/
+    build:
+      context: ./encurtador-url
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+
+  frontend:
+    build:
+      context: ./encurtador-url-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend

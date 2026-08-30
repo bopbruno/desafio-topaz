@@ -37,7 +37,9 @@ public class URLServiceImpl implements URLService {
 
     		urlRepository.save(url);
 
-    		URLEncurtadaResponse urlEncurtadaResponse = new URLEncurtadaResponse(urlEncurt, urlEncurtadaRequest.getUrlOriginal());
+    		String urlBase = System.getenv("APP_BASE_URL") != null ? System.getenv("APP_BASE_URL") : "http://localhost:8080/encurtador-url/api/url/";
+
+    		URLEncurtadaResponse urlEncurtadaResponse = new URLEncurtadaResponse(urlBase + urlEncurt, urlEncurtadaRequest.getUrlOriginal());
 
     		return (urlEncurtadaResponse);
         }
